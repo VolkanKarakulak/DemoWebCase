@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ana Sayfa</title>
+
+    <meta name="description" content="Türkiye'nin en sevilen dijital platformu Digiturk ile hem televizyon keyfini hem de kesintisiz internet deneyimini aynı anda yaşayın! Taraftar Paketleri sayesinde Galatasaray, Fenerbahçe, Beşiktaş ve Trabzonspor maçlarını kaçırmadan izleyin; Sporun Yıldızı ve Yıldız Dolu Paketlerle beIN Sports ayrıcalığını evinize taşıyın. Digiturk Ev İnterneti, VDSL ve Fiber seçenekleriyle 16 Mbps’den 1000 Mbps’ye kadar hızlı ve limitsiz internet sunuyor. Cayma bedeli desteği, kampanyalı fiyatlar ve özel müşteri hizmetleri ile Digiturk’te her şey size özel. Televizyon ve internet keyfini bir araya getiren bu fırsatları hemen keşfedin!" />
+    <meta name="keywords" content="Digiturk, digiturk tv paketleri, digiturk tv, bein connect, taraftar paketi, Lig TV, Bein Sports, internet paketleri, uygun internet, internet hızı, fiber internet, ADSL, VDSL, internet teklifleri, Superbox, internet hizmeti, müşteri hizmetleri" />
+    <meta name="author" content="Digiturk İnternet Tv" />
+
+    <link rel="icon" href="~/Images/logos/logo-digiturk.svg" type="image/svg+xml">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="~/css/input.css" rel="stylesheet" />
+    <link href="~/css/output.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <!-- TailwindCSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preload" as="image" href="~/Images/wallpaper/purple-night-ride-4k-qz-min.webp" type="image/webp">
+
+
+    <!-- Meta Pixel Code (Çoklu Pixel ID) -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        // Birden fazla Pixel ID tanımla
+        fbq('init', '1338119824192456'); // İlk Pixel
+        fbq('init', '1095149805966542'); // İkinci Pixel
+        fbq('track', 'PageView'); // Ortak PageView tetiklemesi
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1338119824192456&ev=PageView&noscript=1" />
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1095149805966542&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P3Q2BVXN');</script>
+    <!-- End Google Tag Manager -->
+
+
+</head>
+<body>
+    @await Html.PartialAsync("Components/_HeaderPartial")
+
+
+
+    <div class="container">
+        @await Html.PartialAsync("Components/_SliderPartial")
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    @await Html.PartialAsync("Components/_FooterPartial")
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
