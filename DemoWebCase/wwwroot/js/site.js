@@ -1,4 +1,3 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiMjAyNSBFdmUgxLBudGVybmV0IMSwbGV0acWfaW0gaGl6bWV0bGVyaSBQYXouIFNhbi4gdmUgVGljLiBMdGQuIMWedGkuIFTDvG0gaGFrbGFyxLEgc2FrbMSxZMSxci4gxLB6aW5zaXoga29weWFsYW5tYXPEsSB2ZSBrdWxsYW7EsWxtYXPEsSB5YXNha3TEsXIuIn0.5MiUClgys_YpXRqkLWwI8WIWpajWAuWV4x17TfceJu8";
 
-// Write your JavaScript code.
+var key = "HS256";
