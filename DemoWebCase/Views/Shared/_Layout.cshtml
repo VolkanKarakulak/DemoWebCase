@@ -50,8 +50,7 @@
    
         @await Html.PartialAsync("Components/_SliderPartial")
 
-        <main>
-      
+        <main> 
             @RenderBody()
         </main>
 
@@ -62,22 +61,7 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 
-    <!-- Meta Pixel Code (Çoklu Pixel ID) -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-
-        // Birden fazla Pixel ID tanımla
-        fbq('init', '1338119824192456'); // İlk Pixel
-        fbq('init', '1095149805966542'); // İkinci Pixel
-        fbq('track', 'PageView'); // Ortak PageView tetiklemesi
-    </script>
+    
 
     <noscript>
         <img height="1" width="1" style="display:none"
@@ -85,54 +69,13 @@
         <img height="1" width="1" style="display:none"
              src="https://www.facebook.com/tr?id=1095149805966542&ev=PageView&noscript=1" />
     </noscript>
-    <!-- End Meta Pixel Code -->
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-P3Q2BVXN');</script>
-    <!-- End Google Tag Manager -->
 
+    <script src="~/js/googletag.js"></script>
+    <script src="~/js/metapixel.js"></script>
+    <script src="~/js/formopenclose.js"></script>
+    <script src="~/js/mobilemenutoggle.js"></script>
 
-    <script>
-        // Mobile menu toggle functionality
-        const mobileBtn = document.getElementById('nav-mobile-btn');
-        const mobileNav = document.getElementById('mobile-nav');
-        const closeBtn = document.getElementById('close-mobile-nav');
-
-        // Menüyü açma/kapatma
-        mobileBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            mobileNav.classList.toggle('hidden');
-        });
-
-        // Overlay'e tıklayınca kapatma
-        mobileNav.addEventListener('click', function(e) {
-            if(e.target === mobileNav) {
-                mobileNav.classList.add('hidden');
-            }
-        });
-
-        // ESC tuşuyla kapatma
-        document.addEventListener('keydown', function(e) {
-            if(e.key === 'Escape' && !mobileNav.classList.contains('hidden')) {
-                mobileNav.classList.add('hidden');
-            }
-        });
-
-        // Kapat butonu ve linkler
-        closeBtn.addEventListener('click', closeMobileNav);
-        document.querySelectorAll('#mobile-nav a').forEach(link => {
-            link.addEventListener('click', closeMobileNav);
-        });
-
-        function closeMobileNav() {
-            mobileNav.classList.add('hidden');
-        }
-    </script>
-
+  
     <script>
         document.addEventListener('DOMContentLoaded', function() {
           const slider = document.getElementById('matchWeekSlider_MatchWeekViewComponentPartial');
@@ -226,20 +169,6 @@
     </script>
 
     <script>
-        // Form açma/kapatma fonksiyonları
-        function openModal() {
-            document.getElementById("form-container").classList.remove("hidden");
-        }
-
-        function closeModal(event) {
-            const modal = document.getElementById("form-container");
-            if (event.target === modal || event.type === "click") {
-                modal.classList.add("hidden");
-            }
-        }
-    </script>
-
-    <script>
         document.querySelectorAll('a[href^="tel"]').forEach(function(el) {
             el.addEventListener("click", function() {
                 fbq('track', 'TelefonAramasi');
@@ -248,36 +177,6 @@
     </script>
 
 
-    <script>
-        document.querySelectorAll('.package-selector').forEach(select => {
-            // Sayfa yüklendiğinde tetikle
-            updateCard(select);
-            select.addEventListener('change', function() {
-                updateCard(this);
-            });
-        });
-
-        function updateCard(selectElement) {
-            const card = selectElement.closest('.package-card');
-            const selectedOption = selectElement.options[selectElement.selectedIndex];
-
-            // Fiyat ve firma bilgisini güncelle
-            card.querySelector('.first-price').textContent = selectedOption.dataset.firstprice;
-
-            // Title bilgisini güncelle
-            const titleElement = card.querySelector('.package-title');
-            if(titleElement) {
-                titleElement.textContent = selectedOption.dataset.title;
-            }
-
-            // URL'nin dinamik olarak güncellenmesi:
-            const detailLink = card.querySelector('.detail-link');
-            if (detailLink) {
-                const newUrl = "/" + selectedOption.dataset.url; //url başında / olmalı
-                detailLink.setAttribute('href', newUrl);
-            }
-        }
-    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.0/sweetalert2.min.js"></script>
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11247112640&amp;cx=c&amp;gtm=45He5621v9208521668za200&amp;tag_exp=101509157~103116026~103200004~103233427~103351869~103351871~104611962~104611964"></script>
