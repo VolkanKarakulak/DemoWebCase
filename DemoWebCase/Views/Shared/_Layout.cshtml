@@ -28,24 +28,25 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.0/sweetalert2.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-
+    <style>
+        .bg-section {
+            background-image: url('/images/wallpaper/purple-night-ride-4k-qz-min.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
    
 
 </head>
 
-<style>
-    .bg-section {
-        background-image: url('/images/wallpaper/purple-night-ride-4k-qz-min.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
+
 
 <body class ="bg-purple-50 text-gray-800" style="font-family: 'Roboto', sans-serif;">
-    <div>
-    @await Html.PartialAsync("Components/_HeaderPartial")
-   </div>
+
+
+        @await Html.PartialAsync("Components/_HeaderPartial")
+
    
         @await Html.PartialAsync("Components/_SliderPartial")
 
